@@ -1,0 +1,117 @@
+<h1 class="mt-3">Pipes
+    <small>Angular</small>
+</h1>
+<div class="row">
+    <div class="col">
+        <div class="table">
+            <thead class="thead.dark">
+                <tr>
+                    <th>Variable</th>
+                    <th>Pipe</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>Uppercase</td>
+                    <td>{{name|uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>Lowercase</td>
+                    <td>{{name|lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>Slice:3</td>
+                    <td>{{name|slice:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>Slice:0:3</td>
+                    <td>{{name|slice:0:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{numbers}}</td>
+                    <td>Slice:1:5</td>
+                    <td>{{numbers|slice:1:5}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>Decimal(number:'1.0-0')</td>
+                    <td>{{PI|number:'1.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>Decimal(number:'3.0-2')</td>
+                    <td>{{PI|number:'3.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>Percent</td>
+                    <td>{{porcentaje|percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>Percent:'2.2-2'</td>
+                    <td>{{porcentaje|percent:'2.2-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salary}}</td>
+                    <td>Currency</td>
+                    <td>{{salary|currency}}</td>
+                </tr>
+                <tr>
+                    <td>{{salary}}</td>
+                    <td>Currency:'COP ':'symbol':'.0-0'</td>
+                    <td>{{salary|currency:'COP ':'symbol':'.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{promise}}</td>
+                    <td>Async</td>
+                    <td>{{promise|async}}</td>
+                </tr>
+                <tr>
+                    <td>{{date}}</td>
+                    <td>Date</td>
+                    <td>{{date|date:'medium'}}</td>
+                </tr>
+                <tr>
+                    <td>{{test}}</td>
+                    <td>Custom</td>
+                    <td>{{test|custom:true}}</td>
+                </tr>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>pass</td>
+                    <td>{{ name | pass: show }}</td>
+                    <button class="btn btn-info" (click)="show = !show">
+                        <p *ngIf="show" class="mb-0">mostrar</p>
+                        <p *ngIf="!show" class="mb-0">ocultar</p>
+                    </button>
+                </tr>
+                <tr >
+                    <td>youtube video {{video}}</td>
+                    <td>video pipe</td>
+                    <td><iframe [src]="video | video:'https://www.youtube.com/embed/'" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+                </tr>
+            </tbody>
+        </div>
+    </div>
+    <h3>JSON</h3>
+    <hr>
+    <div class="row mb-5">
+        <div class="col">
+            <pre>
+                {{students|json}}
+            </pre>
+        </div>
+    </div>
+
+    <h4>Slite for</h4>
+    <ul>
+        <li *ngFor="let item of numbers | slice:5:20">{{item}}</li>
+    </ul>
+</div>
